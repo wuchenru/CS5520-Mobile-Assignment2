@@ -11,10 +11,8 @@ import {
 import { useState } from "react";
 export default function ImportantExpenses() {
     return (
-        <View>
-            <Text>
-                TestImportantExpenses;
-            </Text>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+          <Text>Important Expenses</Text>
         </View>
-    )
+      );
 }

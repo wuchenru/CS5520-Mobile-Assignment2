@@ -3,22 +3,12 @@ import { Text, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AllExpenses from "./screens/AllExpenses";
+import ImportantExpenses from "./screens/ImportantExpenses";
 
-function AllExpenses() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
 
-function ImportantExpenses() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
+
+
 
 const Tab = createBottomTabNavigator();
 
