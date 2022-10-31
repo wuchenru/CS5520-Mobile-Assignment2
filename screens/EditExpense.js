@@ -1,18 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
-  Text,
   View,
-  Button,
-  SafeAreaView,
-  FlatList,
 } from "react-native";
-import { useState } from "react";
 import { updateImportanceToDB } from "../firebase/firestore";
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MyButton from "../components/MyButton";
 import { useNavigation } from "@react-navigation/native";
 import { Alert } from "react-native";

@@ -1,8 +1,5 @@
 import * as React from "react";
-import { Text, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./screens/Home";
 import AddExpense from "./screens/AddExpense";
