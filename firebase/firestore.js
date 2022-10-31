@@ -24,9 +24,6 @@ export async function deleteFromDB(key) {
 
 export async function updateImportanceToDB(key) {
   try {
-    // alert(key);
-    // await firestore.collection("Expenses").doc(key).update({ important: true });
-
     const updateRef = doc(firestore, "Expenses", key);
     await updateDoc(updateRef, {
       important: true,

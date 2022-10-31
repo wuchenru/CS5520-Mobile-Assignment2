@@ -21,15 +21,15 @@ export default function MyButton({ buttonName, onPressed }) {
 const styles = StyleSheet.create({
   button: {
     fontSize: 18,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 8,
     elevation: 3,
     backgroundColor: COLORS.DARKBLUE,
-    margin:10,
-    height:60
+    margin: 10,
+    height: 60,
   },
   pressedItm: {
     opacity: 0.4,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 16,
     lineHeight: 21,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     letterSpacing: 0.25,
     color: COLORS.WHITE,
   },

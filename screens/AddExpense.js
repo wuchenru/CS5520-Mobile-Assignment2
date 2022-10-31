@@ -1,15 +1,10 @@
-import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   View,
-  SafeAreaView,
 } from "react-native";
 import { useState } from "react";
 import MyInput from "../components/MyInput";
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MyButton from "../components/MyButton";
 import { writeToDB } from "../firebase/firestore";
 import { useNavigation } from "@react-navigation/native";
@@ -88,7 +83,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.LIGHTBLUE,
-    // alignItems: "center",
+    alignItems: "center",
     justifyContent: "center",
   },
   buttons:{

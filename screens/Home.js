@@ -1,11 +1,12 @@
 
 import * as React from "react";
-import { Text, View, Button } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { Button } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import AllExpenses from "./AllExpenses";
 import ImportantExpenses from "./ImportantExpenses";
+import { COLORS } from "../helper";
+import MyButton from "../components/MyButton";
 
 const Tab = createBottomTabNavigator();
 export default function Home({navigation}) {
@@ -13,7 +14,8 @@ export default function Home({navigation}) {
       <Tab.Navigator
         initialRouteName="All Expenses"
         screenOptions={{
-          tabBarActiveTintColor: "#e91e63",
+          tabBarActiveTintColor: COLORS.MAROON,
+          headerStyle: {backgroundColor: COLORS.BLUE}, headerTintColor: COLORS.WHITE
         }}
       >
         <Tab.Screen
@@ -28,7 +30,7 @@ export default function Home({navigation}) {
                 size={size}
               />
             ),
-            headerRight: () => <Button title="Add" onPress={() => {navigation.navigate("AddExpense")}} />,
+            headerRight: () => <Button title="Add" onPress={() => {navigation.navigate("AddExpense")}} color={COLORS.WHITE} />,
           }}
         />
         <Tab.Screen
@@ -43,7 +45,7 @@ export default function Home({navigation}) {
                 size={size}
               />
             ),
-            headerRight: () => <Button title="Add" onPress={() => {navigation.navigate("AddExpense")}} />,
+            headerRight: () => <Button title="Add" onPress={() => {navigation.navigate("AddExpense")}} color={COLORS.WHITE} />,
           }}
         />
       </Tab.Navigator>

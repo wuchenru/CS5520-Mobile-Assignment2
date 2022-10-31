@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     borderColor: COLORS.DARKBLUE,
     borderRadius: 10,
     padding: 10,
-    backgroundColor:COLORS.WHITE
+    backgroundColor: COLORS.WHITE,
   },
 });

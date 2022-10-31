@@ -1,7 +1,4 @@
-import {
-  StyleSheet,
-  View,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import { updateImportanceToDB } from "../firebase/firestore";
 import * as React from "react";
 import MyButton from "../components/MyButton";
@@ -53,8 +50,8 @@ export default function EditExpense({ route }) {
 
   return (
     <View style={styles.container}>
-        <MyButton buttonName="Mark as important" onPressed={importantPressed} />
-        <MyButton buttonName="Delete" onPressed={deletePressed} />
+      <MyButton buttonName="Mark as important" onPressed={importantPressed} />
+      <MyButton buttonName="Delete" onPressed={deletePressed} />
     </View>
   );
 }
@@ -65,5 +62,4 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.LIGHTBLUE,
     padding: 40,
   },
-
 });
