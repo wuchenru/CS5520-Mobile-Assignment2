@@ -2,49 +2,57 @@ import { View, StyleSheet, Pressable, Text, Button } from "react-native";
 import React from "react";
 import { COLORS } from "../helper";
 
-export default function Expense({ amount, description, important, onExpensePress}) {
-  // function deletePressed() {
-  //   onDelete(goal.key);
-  // }
-  
+export default function Expense({
+  amount,
+  description,
+  important,
+  onExpensePress,
+}) {
   return (
-    <View style={styles.expenseTextContainer}>
       <Pressable
-        onPress={() => {
-          onExpensePress();
-        }}
+        onPress={onExpensePress}
         android_ripple={{ color: "#223355", foreground: true }}
         style={(obj) => {
-          return obj.pressed && styles.pressedItem;
-          //  style={({pressed}) => {
-          //   return pressed && styles.pressedItem;
+          return [obj.pressed && styles.pressedItem,styles.expenseTextContainer ]
         }}
       >
-        <Text style={styles.expenseText}>
-          {" "}
-          {amount}, {description}, {important}
-        </Text>
+          <Text style={styles.expenseText}>{description}</Text>
+          <View style={styles.expenseAmountContainer}>
+          <Text style={styles.expenseAmount}>{amount}</Text>
+          </View>
       </Pressable>
-      {/* <DeleteButton onDeletePressed={deletePressed} /> */}
-    </View>
   );
 }
 
 const styles = StyleSheet.create({
   expenseTextContainer: {
+    flex:1,
+    width:400,
+    height:60,
     margin: 8,
+    padding:10,
     borderRadius: 5,
-    backgroundColor: "#aaa",
+    backgroundColor: COLORS.DARKBLUE,
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     alignItems: "center",
+    borderRadius:5
   },
-
   expenseText: {
     fontSize: 18,
-    color: "#929",
-    // backgroundColor:'#aaa',
+    color: COLORS.LIGHTBLUE,
     padding: 8,
+  },
+  expenseAmountContainer:{
+    width:80,
+    height:40,
+    backgroundColor:COLORS.WHITE,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius:5
+  },
+  expenseAmount: {
+    color:COLORS.DARKBLUE,
   },
   pressedItem: {
     backgroundColor: "#222",

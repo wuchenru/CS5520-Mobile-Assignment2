@@ -63,7 +63,6 @@ export default function EditExpense({route}) {
 
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-          <Text>Edit Expense</Text>
           <MyButton buttonName="Mark as important" onPressed={importantPressed}/>
           <MyButton buttonName="Delete" onPressed={deletePressed}/>
         </View>

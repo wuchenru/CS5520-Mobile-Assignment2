@@ -57,19 +57,17 @@ export default function ImportantExpenses() {
     };
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-          <Text>Important Expenses</Text>
-          {expenses.map((expense) => {
-              if(expense.important) {
-                  return (<Expense
-                    amount={expense.amount}
-                    description={expense.description}
-                    important={expense.important}
-                    onExpensePress={() => onExpensePressed(expense.key)}
-                    navigation={navigation}
-                    key={expense.key}
-    />)
-              }
-          })}
+          
+      <View style={styles.bottomContainer}>
+        <ExpenseList expenses={expenses.filter(item=>item.important)} onExpensePressed={onExpensePressed}/>
+      </View>
         </View>
       );
 }
+
+const styles = StyleSheet.create({
+
+
+ 
+  });
+  

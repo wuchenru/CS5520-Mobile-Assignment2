@@ -76,7 +76,6 @@ export default function AddExpense() {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Add Expense</Text>
       <MyInput header="Amount" text={amount} setText={setAmount} />
       <MyInput
         header="Description"

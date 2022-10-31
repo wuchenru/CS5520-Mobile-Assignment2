@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Expense from "./Expense";
 
-export default function ExpenseList({expenses, onExpensePress}) {
+export default function ExpenseList({expenses, onExpensePressed}) {
   return (
     // <View style={styles.expenseTextContainer}>
     //     <Pressable
@@ -21,15 +21,20 @@ export default function ExpenseList({expenses, onExpensePress}) {
 
     // </View>
     <View style={styles.bottomContainer}>
-      <FlatList
-        data={expenses}
-        renderItem={({ expense }) => {
-          // console.log(item);
-          if(expense === null) return;
-          return <Expense amount={expense.amount} description={expense.description} important={expense.description} onExpensePress={onExpensePress} />;
-        }}
-        contentContainerStyle={styles.scrollViewItems}
-      ></FlatList>
+        <FlatList
+          data={expenses}
+          renderItem={( {item} ) => {
+            return (
+                <Expense
+                amount={item.amount}
+                description={item.description}
+                important={item.important}
+                onExpensePress={() => onExpensePressed(item.key)}
+              />
+            );
+          }}
+          contentContainerStyle={styles.scrollViewItems}
+        />
     </View>
   );
 }

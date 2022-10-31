@@ -57,36 +57,9 @@ export default function AllExpenses() {
 
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>All Expenses</Text>
-      {expenses.map((expense) => (
-        <View key={expense.key}>
-          <Expense
-            amount={expense.amount}
-            description={expense.description}
-            important={expense.important}
-            onExpensePress={() => onExpensePressed(expense.key)}
-            navigation={navigation}
-          />
-          {/* <Text>{expense.key}</Text> */}
-        </View>
-      ))}
+
       <View style={styles.bottomContainer}>
-        {/* <FlatList
-          data={expenses}
-          renderItem={({ expense }) => {
-            // console.log(item);
-            // if (expense === null) return;
-            return (
-              <Expense
-                amount={expense.amount}
-                description={expense.description}
-                important={expense.description}
-                onExpensePress={onExpensePress}
-              />
-            );
-          }}
-          contentContainerStyle={styles.scrollViewItems}
-        ></FlatList> */}
+        <ExpenseList expenses={expenses} onExpensePressed={onExpensePressed}/>
       </View>
     </View>
   );
