@@ -28,16 +28,17 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 3,
     backgroundColor: COLORS.DARKBLUE,
+    margin:10,
+    height:60
   },
   pressedItm: {
-    opacity: 0.5,
-    backgroundColor: "#222",
+    opacity: 0.4,
   },
   text: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'white',
+    color: COLORS.WHITE,
   },
 });

@@ -1,11 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
-  Text,
   View,
-  Button,
   SafeAreaView,
-  FlatList,
 } from "react-native";
 import { useState } from "react";
 import MyInput from "../components/MyInput";
@@ -16,6 +13,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MyButton from "../components/MyButton";
 import { writeToDB } from "../firebase/firestore";
 import { useNavigation } from "@react-navigation/native";
+import { COLORS } from "../helper";
 
 export default function AddExpense() {
   const [amount, setAmount] = useState("");
@@ -23,12 +21,6 @@ export default function AddExpense() {
   const [important, setImportant] = useState(false);
   const navigation = useNavigation();
   const addExpense = async function ({ amount, description, important }) {
-    // update this function to receive newText and adds an object
-    //with properties text and key to goals array
-    // const newGoal = { text: newText, key: Math.random() };
-    // setGoals((prevgoals) => {
-    //   return [...prevgoals, newGoal];
-    // });
     await writeToDB({
       amount: amount,
       description: description,
@@ -37,7 +29,7 @@ export default function AddExpense() {
   };
 
   const onSubmit = ({ amount, description, important }) => {
-    if (checkNotNull({amount, description})) {
+    if (checkNotNull({ amount, description })) {
       if (checkValid(amount)) {
         addExpense({ amount, description, important });
         navigation.goBack();
@@ -53,7 +45,7 @@ export default function AddExpense() {
     setDescription("");
   };
 
-  const checkNotNull = ({amount, description}) => {
+  const checkNotNull = ({ amount, description }) => {
     if (!amount || !description) {
       alert("Cannot add empty expense");
       return false;
@@ -75,14 +67,14 @@ export default function AddExpense() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <View style={styles.container}>
       <MyInput header="Amount" text={amount} setText={setAmount} />
       <MyInput
         header="Description"
         text={description}
         setText={setDescription}
       />
-      <View>
+      <View style={styles.buttons}>
         <MyButton buttonName="cancel" onPressed={() => onCancel()} />
         <MyButton
           buttonName="submit"
@@ -92,3 +84,15 @@ export default function AddExpense() {
     </View>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.LIGHTBLUE,
+    // alignItems: "center",
+    justifyContent: "center",
+  },
+  buttons:{
+    flexDirection:'row',
+    justifyContent:'space-around'
+  }
+});
