@@ -3,60 +3,24 @@ import { Text, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import AllExpenses from "./screens/AllExpenses";
-import ImportantExpenses from "./screens/ImportantExpenses";
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from "./screens/Home";
+import AddExpense from "./screens/AddExpense";
+import EditExpense from "./screens/EditExpense";
 
-
-
-
-
-const Tab = createBottomTabNavigator();
-
-function MyTabs() {
-  return (
-    <Tab.Navigator
-      initialRouteName="All Expenses"
-      screenOptions={{
-        tabBarActiveTintColor: "#e91e63",
-      }}
-    >
-      <Tab.Screen
-        name="All Expenses"
-        component={AllExpenses}
-        options={{
-          tabBarLabel: "All Expenses",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="currency-usd"
-              color={color}
-              size={size}
-            />
-          ),
-          headerRight: () => <Button title="Add" />,
-        }}
-      />
-      <Tab.Screen
-        name="Important Expenses"
-        component={ImportantExpenses}
-        options={{
-          tabBarLabel: "Important Expenses",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons
-              name="exclamation"
-              color={color}
-              size={size}
-            />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
-
+const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <MyTabs />
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="AddExpense" component={AddExpense} />
+        <Stack.Screen name="EditExpense" component={EditExpense} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

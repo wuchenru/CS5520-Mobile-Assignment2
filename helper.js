@@ -5,7 +5,7 @@ const COLORS = {
     YELLOW: "#388697",
     PURPLE: "#800080",
     LIGHTBLUE: "#DCF8FC",
-    DARKBLUE:"#08415C",
+    DARKBLUE:"#202f78",
     BLUE:"#388697",
     GREEN:'#7CBBA2'
 }
