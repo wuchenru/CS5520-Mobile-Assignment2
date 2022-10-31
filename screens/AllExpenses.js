@@ -21,6 +21,7 @@ import {
 import { firestore } from "../firebase/firebase-setup";
 import { collection, onSnapshot } from "firebase/firestore";
 import ExpenseList from "../components/ExpenseList";
+import { COLORS } from "../helper";
 
 export default function AllExpenses() {
   const expensesCollectionRef = collection(firestore, "Expenses");
@@ -56,11 +57,8 @@ export default function AllExpenses() {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-
-      <View style={styles.bottomContainer}>
-        <ExpenseList expenses={expenses} onExpensePressed={onExpensePressed}/>
-      </View>
+    <View style={styles.container}>
+      <ExpenseList expenses={expenses} onExpensePressed={onExpensePressed}/>
     </View>
   );
 }
@@ -68,8 +66,8 @@ export default function AllExpenses() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
+    backgroundColor: COLORS.LIGHTBLUE,
+    alignItems: "center",
     justifyContent: "center",
   },
   topContainer: {
@@ -79,7 +77,6 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     flex: 4,
-    backgroundColor: "pink",
   },
   scrollViewItems: {
     alignItems: "center",

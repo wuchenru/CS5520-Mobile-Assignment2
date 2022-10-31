@@ -30,6 +30,5 @@ export default function ExpenseList({expenses, onExpensePressed}) {
 const styles = StyleSheet.create({
   bottomContainer: {
     flex: 4,
-    backgroundColor: COLORS.LIGHTBLUE,
   },
 });
